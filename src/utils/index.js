@@ -65,7 +65,7 @@ function to256(inVal) {
 
   let bigIn = toBN(inVal);
 
-  return { low: bigIn.and(mask).toString(), high: bigIn.shrn(128).toString() };
+  return { low: bigIn.and(mask), high: bigIn.shrn(128) };
 }
 
 function toBig3(val) {
@@ -83,7 +83,7 @@ function toBig3(val) {
   let d1 = bigIn.and(mask);
   bigIn = bigIn.shrn(86);
 
-  return { D0: d0.toString(), D1: d1.toString(), D2: bigIn.toString() };
+  return { D0: d0, D1: d1, D2: bigIn };
 }
 
 function parseBig3(slice) {
@@ -189,5 +189,6 @@ export default {
   hexToUtf8,
   toHex,
   toSelector,
+  isHex,
   // utf8ToHex,
 };

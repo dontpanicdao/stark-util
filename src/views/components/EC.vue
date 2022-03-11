@@ -11,7 +11,7 @@
       <li class="list-group-item">
         Private:
         <div
-          :class="{ 'btn btn-outline-success': privateKey }"
+          :class="{ 'btn btn-sm btn-outline-success': privateKey }"
           @click="copy(privateKey)"
         >
           {{ privateKey }}
@@ -20,7 +20,7 @@
       <li class="list-group-item">
         Public X:
         <div
-          :class="{ 'btn btn-outline-success': publicKeyX }"
+          :class="{ 'btn btn-sm btn-outline-success': publicKeyX }"
           @click="copy(publicKeyX)"
         >
           {{ publicKeyX }}
@@ -47,7 +47,7 @@
       <br />
       Hash Out:
       <div
-        :class="{ 'btn btn-outline-success': hashOut }"
+        :class="{ 'btn btn-sm btn-outline-success': hashOut }"
         @click="copy(hashOut)"
       >
         {{ hashOut }}

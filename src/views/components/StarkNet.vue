@@ -85,6 +85,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+
 // import utils from "@/utils";
 
 export default {
@@ -92,6 +93,7 @@ export default {
     return {
       txHash: "",
       is_testnet: true,
+      is_mainnet: false,
       entryPoint: "",
       inputs: "",
       contractAddr: "",

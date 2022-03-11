@@ -2,7 +2,7 @@
   <div>
     <div class="main-content">
       <div
-        class="header d-flex align-items-center min-vh-100 bg-cover"
+        class="header d-flex pt-4 pt-md-8 min-vh-100 bg-cover"
         rel="preload"
         style="
           display: none;
@@ -11,8 +11,8 @@
           background-position: center top;
         "
       >
-        <div class="container-fluid mt--4">
-          <div class="row justify-content-center" style="margin-top: min(10%)">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
             <div class="col-lg-6 col-md-7">
               <div class="card bg-secondary shadow border-0">
                 <div class="card-header text-center">
@@ -23,18 +23,19 @@
                   <StarkNet v-if="utilPane == 2" />
                   <EC v-if="utilPane == 3" />
                 </div>
-                <div class="card-footer footy text-center">
-                  <div v-if="utilPane == 1" class="btn btn-sm" disabled>
+                <div class="card-footer footy">
+                  <div
+                    v-if="utilPane !== 1"
+                    class="btn btn-sm btn-success float-left"
+                    @click="moveLeft"
+                  >
                     <i class="fas fa-angle-left"></i>
                   </div>
-                  <div v-else class="btn btn-sm btn-success" @click="moveLeft">
-                    <i class="fas fa-angle-left"></i>
-                  </div>
-
-                  <div v-if="utilPane == 3" class="btn btn-sm" disabled>
-                    <i class="fas fa-angle-right"></i>
-                  </div>
-                  <div v-else class="btn btn-sm btn-success" @click="moveRight">
+                  <div
+                    v-if="utilPane !== 3"
+                    class="btn btn-sm btn-success float-right"
+                    @click="moveRight"
+                  >
                     <i class="fas fa-angle-right"></i>
                   </div>
                 </div>
@@ -73,4 +74,4 @@ export default {
   },
 };
 </script>
-<style></style>
+<style src="@vueform/toggle/themes/default.css"></style>
